@@ -66,3 +66,11 @@ The **$TRG** token (Trillion Game) has officially been deployed on **Abstract Ch
 
 > “ONE GAME. ONE WINNER. ONE TRILLION.”  
 > TRG is built with simplicity, fairness, and utility in mind.
+
+---
+
+## 📖 More Resources
+
+- [📖 View Staking Instructions](./STAKE.md)
+- [🔍 View Token on Abscan](https://abscan.org/address/0xE50716A1d4D91aa03e2b490c992B2628bDAbbADD)
+- [🔍 View Staking on Abscan](https://abscan.org/address/0xF2361859517CbACbBC39180036496d37bff88BFC)
