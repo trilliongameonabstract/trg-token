@@ -1,0 +1,1705 @@
+{
+  "version": "3.4",
+  "log": [
+    {
+      "contracts/TRGStaking.sol:TRGStaking": {
+        "src": "contracts\\TRGStaking.sol:8",
+        "version": {
+          "withMetadata": "2cc54decc9cc5da54b774bd8d49634f4bf76a302eebbd4124d139137d6386e69",
+          "withoutMetadata": "cde6f4cce949f075e21dc6eb34d733f33d93d7bc40c61058b60ba7e4d598d3ac",
+          "linkedWithoutMetadata": "cde6f4cce949f075e21dc6eb34d733f33d93d7bc40c61058b60ba7e4d598d3ac"
+        },
+        "inherit": [
+          "contracts/utils/ReentrancyGuard.sol:ReentrancyGuard",
+          "contracts/utils/Ownable.sol:Ownable"
+        ],
+        "libraries": [],
+        "methods": [
+          "(address)",
+          "addReward(uint256)",
+          "stake(uint256)",
+          "unstake()",
+          "pendingReward(address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "TRGStaking",
+            "src": "contracts\\TRGStaking.sol:27"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "trgToken",
+            "src": "contracts\\TRGStaking.sol:9"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "TRGStaking",
+              "label": "stakes",
+              "type": "t_mapping(t_address,t_struct(StakeInfo)18_storage)",
+              "src": "contracts\\TRGStaking.sol:17"
+            },
+            {
+              "contract": "TRGStaking",
+              "label": "totalStaked",
+              "type": "t_uint256",
+              "src": "contracts\\TRGStaking.sol:18"
+            },
+            {
+              "contract": "TRGStaking",
+              "label": "rewardPool",
+              "type": "t_uint256",
+              "src": "contracts\\TRGStaking.sol:19"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_struct(StakeInfo)18_storage)": {
+              "label": "mapping(address => struct TRGStaking.StakeInfo)"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_struct(StakeInfo)18_storage": {
+              "label": "struct TRGStaking.StakeInfo",
+              "members": [
+                {
+                  "label": "amount",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "rewardDebt",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "lastStakeTime",
+                  "type": "t_uint256"
+                }
+              ]
+            },
+            "t_uint256": {
+              "label": "uint256"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/TRGToken.sol:IUniswapV2Router02": {
+        "src": "contracts\\TRGToken.sol:10",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "addLiquidityETH(address,uint256,uint256,uint256,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/TRGToken.sol:TrillionGame": {
+        "src": "contracts\\TRGToken.sol:21",
+        "version": {
+          "withMetadata": "1fc57725086b2b917fb400542424916715dad66dd594da5b0e832d51addfc5d3",
+          "withoutMetadata": "c22b79a3d3c190c68e4bd92a121a7334c9c1c18a6ffc0f4b9c34a55411c7dc2d",
+          "linkedWithoutMetadata": "c22b79a3d3c190c68e4bd92a121a7334c9c1c18a6ffc0f4b9c34a55411c7dc2d"
+        },
+        "inherit": [
+          "contracts/utils/ReentrancyGuard.sol:ReentrancyGuard",
+          "contracts/utils/Ownable.sol:Ownable",
+          "contracts/utils/ERC20Permit.sol:ERC20Permit",
+          "contracts/utils/ERC20.sol:ERC20",
+          "contracts/utils/IERC20.sol:IERC20"
+        ],
+        "libraries": [],
+        "methods": [
+          "(address,address)",
+          "setDevWallet(address)",
+          "setDevFee(uint256)",
+          "setMaxTxAmount(uint256)",
+          "excludeFromFees(address,bool)",
+          "enableTrading()",
+          "burn(uint256)",
+          "()",
+          "addInitialLiquidity(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "TrillionGame",
+            "src": "contracts\\TRGToken.sol:37"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "devFee",
+            "src": "contracts\\TRGToken.sol:25"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "maxTxAmount",
+            "src": "contracts\\TRGToken.sol:26"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "tradingEnabled",
+            "src": "contracts\\TRGToken.sol:28"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "routerAddress",
+            "src": "contracts\\TRGToken.sol:31"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "TrillionGame",
+              "label": "devFee",
+              "type": "t_uint256",
+              "src": "contracts\\TRGToken.sol:25"
+            },
+            {
+              "contract": "TrillionGame",
+              "label": "maxTxAmount",
+              "type": "t_uint256",
+              "src": "contracts\\TRGToken.sol:26"
+            },
+            {
+              "contract": "TrillionGame",
+              "label": "tradingEnabled",
+              "type": "t_bool",
+              "src": "contracts\\TRGToken.sol:28"
+            },
+            {
+              "contract": "TrillionGame",
+              "label": "devWallet",
+              "type": "t_address",
+              "src": "contracts\\TRGToken.sol:30"
+            },
+            {
+              "contract": "TrillionGame",
+              "label": "_isExcludedFromFees",
+              "type": "t_mapping(t_address,t_bool)",
+              "src": "contracts\\TRGToken.sol:32"
+            }
+          ],
+          "types": {
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_bool": {
+              "label": "bool"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/utils/ERC20.sol:ERC20": {
+        "src": "contracts\\utils\\ERC20.sol:6",
+        "version": {
+          "withMetadata": "f0310f256cd1ba50ab11d2bfb9f0263b815d19bbd082d07ae1dd12de271bb26f",
+          "withoutMetadata": "e04e45ff3cfcbd38c05dd583495b6f37c5d4bb186fdabdf22405e8cdfbf81e8f",
+          "linkedWithoutMetadata": "e04e45ff3cfcbd38c05dd583495b6f37c5d4bb186fdabdf22405e8cdfbf81e8f"
+        },
+        "inherit": [
+          "contracts/utils/IERC20.sol:IERC20"
+        ],
+        "libraries": [],
+        "methods": [
+          "(string,string)",
+          "totalSupply()",
+          "transfer(address,uint256)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "ERC20",
+            "src": "contracts\\utils\\ERC20.sol:15"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "ERC20",
+              "label": "name",
+              "type": "t_string_storage",
+              "src": "contracts\\utils\\ERC20.sol:7"
+            },
+            {
+              "contract": "ERC20",
+              "label": "symbol",
+              "type": "t_string_storage",
+              "src": "contracts\\utils\\ERC20.sol:8"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_totalSupply",
+              "type": "t_uint256",
+              "src": "contracts\\utils\\ERC20.sol:10"
+            },
+            {
+              "contract": "ERC20",
+              "label": "balanceOf",
+              "type": "t_mapping(t_address,t_uint256)",
+              "src": "contracts\\utils\\ERC20.sol:12"
+            },
+            {
+              "contract": "ERC20",
+              "label": "allowance",
+              "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+              "src": "contracts\\utils\\ERC20.sol:13"
+            }
+          ],
+          "types": {
+            "t_string_storage": {
+              "label": "string"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+              "label": "mapping(address => mapping(address => uint256))"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/utils/ERC20Permit.sol:ERC20Permit": {
+        "src": "contracts\\utils\\ERC20Permit.sol:4",
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/utils/IERC20.sol:IERC20": {
+        "src": "contracts\\utils\\IERC20.sol:4",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/utils/Ownable.sol:Ownable": {
+        "src": "contracts\\utils\\Ownable.sol:4",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "owner()",
+          "transferOwnership(address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Ownable",
+            "src": "contracts\\utils\\Ownable.sol:9"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "Ownable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "contracts\\utils\\Ownable.sol:5"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/utils/ReentrancyGuard.sol:ReentrancyGuard": {
+        "src": "contracts\\utils\\ReentrancyGuard.sol:4",
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "ReentrancyGuard",
+            "src": "contracts\\utils\\ReentrancyGuard.sol:10"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "ReentrancyGuard",
+              "label": "_status",
+              "type": "t_uint256",
+              "src": "contracts\\utils\\ReentrancyGuard.sol:8"
+            }
+          ],
+          "types": {
+            "t_uint256": {
+              "label": "uint256"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/utils/SafeMath.sol:SafeMath": {
+        "src": "contracts\\utils\\SafeMath.sol:4",
+        "version": {
+          "withMetadata": "ea95b0ef143cc2f9842139ad212a505e0510e01f202d2b9b4bb933a303a40937",
+          "withoutMetadata": "3549540529f7cd39c5550a74fcc5f70e5e6b37f04564fcff838b549749e11f64",
+          "linkedWithoutMetadata": "3549540529f7cd39c5550a74fcc5f70e5e6b37f04564fcff838b549749e11f64"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      }
+    },
+    {
+      "contracts/TRGStaking.sol:TRGStaking": {
+        "src": "contracts\\TRGStaking.sol:8",
+        "version": {
+          "withMetadata": "2cc54decc9cc5da54b774bd8d49634f4bf76a302eebbd4124d139137d6386e69",
+          "withoutMetadata": "cde6f4cce949f075e21dc6eb34d733f33d93d7bc40c61058b60ba7e4d598d3ac",
+          "linkedWithoutMetadata": "cde6f4cce949f075e21dc6eb34d733f33d93d7bc40c61058b60ba7e4d598d3ac"
+        },
+        "inherit": [
+          "contracts/utils/ReentrancyGuard.sol:ReentrancyGuard",
+          "contracts/utils/Ownable.sol:Ownable"
+        ],
+        "libraries": [],
+        "methods": [
+          "(address)",
+          "addReward(uint256)",
+          "stake(uint256)",
+          "unstake()",
+          "pendingReward(address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "TRGStaking",
+            "src": "contracts\\TRGStaking.sol:27"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "trgToken",
+            "src": "contracts\\TRGStaking.sol:9"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "TRGStaking",
+              "label": "stakes",
+              "type": "t_mapping(t_address,t_struct(StakeInfo)18_storage)",
+              "src": "contracts\\TRGStaking.sol:17"
+            },
+            {
+              "contract": "TRGStaking",
+              "label": "totalStaked",
+              "type": "t_uint256",
+              "src": "contracts\\TRGStaking.sol:18"
+            },
+            {
+              "contract": "TRGStaking",
+              "label": "rewardPool",
+              "type": "t_uint256",
+              "src": "contracts\\TRGStaking.sol:19"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_struct(StakeInfo)18_storage)": {
+              "label": "mapping(address => struct TRGStaking.StakeInfo)"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_struct(StakeInfo)18_storage": {
+              "label": "struct TRGStaking.StakeInfo",
+              "members": [
+                {
+                  "label": "amount",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "rewardDebt",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "lastStakeTime",
+                  "type": "t_uint256"
+                }
+              ]
+            },
+            "t_uint256": {
+              "label": "uint256"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/TRGToken.sol:IUniswapV2Router02": {
+        "src": "contracts\\TRGToken.sol:10",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "addLiquidityETH(address,uint256,uint256,uint256,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/TRGToken.sol:TrillionGame": {
+        "src": "contracts\\TRGToken.sol:21",
+        "version": {
+          "withMetadata": "1fc57725086b2b917fb400542424916715dad66dd594da5b0e832d51addfc5d3",
+          "withoutMetadata": "c22b79a3d3c190c68e4bd92a121a7334c9c1c18a6ffc0f4b9c34a55411c7dc2d",
+          "linkedWithoutMetadata": "c22b79a3d3c190c68e4bd92a121a7334c9c1c18a6ffc0f4b9c34a55411c7dc2d"
+        },
+        "inherit": [
+          "contracts/utils/ReentrancyGuard.sol:ReentrancyGuard",
+          "contracts/utils/Ownable.sol:Ownable",
+          "contracts/utils/ERC20Permit.sol:ERC20Permit",
+          "contracts/utils/ERC20.sol:ERC20",
+          "contracts/utils/IERC20.sol:IERC20"
+        ],
+        "libraries": [],
+        "methods": [
+          "(address,address)",
+          "setDevWallet(address)",
+          "setDevFee(uint256)",
+          "setMaxTxAmount(uint256)",
+          "excludeFromFees(address,bool)",
+          "enableTrading()",
+          "burn(uint256)",
+          "()",
+          "addInitialLiquidity(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "TrillionGame",
+            "src": "contracts\\TRGToken.sol:37"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "devFee",
+            "src": "contracts\\TRGToken.sol:25"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "maxTxAmount",
+            "src": "contracts\\TRGToken.sol:26"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "tradingEnabled",
+            "src": "contracts\\TRGToken.sol:28"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "routerAddress",
+            "src": "contracts\\TRGToken.sol:31"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "TrillionGame",
+              "label": "devFee",
+              "type": "t_uint256",
+              "src": "contracts\\TRGToken.sol:25"
+            },
+            {
+              "contract": "TrillionGame",
+              "label": "maxTxAmount",
+              "type": "t_uint256",
+              "src": "contracts\\TRGToken.sol:26"
+            },
+            {
+              "contract": "TrillionGame",
+              "label": "tradingEnabled",
+              "type": "t_bool",
+              "src": "contracts\\TRGToken.sol:28"
+            },
+            {
+              "contract": "TrillionGame",
+              "label": "devWallet",
+              "type": "t_address",
+              "src": "contracts\\TRGToken.sol:30"
+            },
+            {
+              "contract": "TrillionGame",
+              "label": "_isExcludedFromFees",
+              "type": "t_mapping(t_address,t_bool)",
+              "src": "contracts\\TRGToken.sol:32"
+            }
+          ],
+          "types": {
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_bool": {
+              "label": "bool"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/utils/ERC20.sol:ERC20": {
+        "src": "contracts\\utils\\ERC20.sol:6",
+        "version": {
+          "withMetadata": "f0310f256cd1ba50ab11d2bfb9f0263b815d19bbd082d07ae1dd12de271bb26f",
+          "withoutMetadata": "e04e45ff3cfcbd38c05dd583495b6f37c5d4bb186fdabdf22405e8cdfbf81e8f",
+          "linkedWithoutMetadata": "e04e45ff3cfcbd38c05dd583495b6f37c5d4bb186fdabdf22405e8cdfbf81e8f"
+        },
+        "inherit": [
+          "contracts/utils/IERC20.sol:IERC20"
+        ],
+        "libraries": [],
+        "methods": [
+          "(string,string)",
+          "totalSupply()",
+          "transfer(address,uint256)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "ERC20",
+            "src": "contracts\\utils\\ERC20.sol:15"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "ERC20",
+              "label": "name",
+              "type": "t_string_storage",
+              "src": "contracts\\utils\\ERC20.sol:7"
+            },
+            {
+              "contract": "ERC20",
+              "label": "symbol",
+              "type": "t_string_storage",
+              "src": "contracts\\utils\\ERC20.sol:8"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_totalSupply",
+              "type": "t_uint256",
+              "src": "contracts\\utils\\ERC20.sol:10"
+            },
+            {
+              "contract": "ERC20",
+              "label": "balanceOf",
+              "type": "t_mapping(t_address,t_uint256)",
+              "src": "contracts\\utils\\ERC20.sol:12"
+            },
+            {
+              "contract": "ERC20",
+              "label": "allowance",
+              "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+              "src": "contracts\\utils\\ERC20.sol:13"
+            }
+          ],
+          "types": {
+            "t_string_storage": {
+              "label": "string"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+              "label": "mapping(address => mapping(address => uint256))"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/utils/ERC20Permit.sol:ERC20Permit": {
+        "src": "contracts\\utils\\ERC20Permit.sol:4",
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/utils/IERC20.sol:IERC20": {
+        "src": "contracts\\utils\\IERC20.sol:4",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/utils/Ownable.sol:Ownable": {
+        "src": "contracts\\utils\\Ownable.sol:4",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "owner()",
+          "transferOwnership(address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Ownable",
+            "src": "contracts\\utils\\Ownable.sol:9"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "Ownable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "contracts\\utils\\Ownable.sol:5"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/utils/ReentrancyGuard.sol:ReentrancyGuard": {
+        "src": "contracts\\utils\\ReentrancyGuard.sol:4",
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "ReentrancyGuard",
+            "src": "contracts\\utils\\ReentrancyGuard.sol:10"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "ReentrancyGuard",
+              "label": "_status",
+              "type": "t_uint256",
+              "src": "contracts\\utils\\ReentrancyGuard.sol:8"
+            }
+          ],
+          "types": {
+            "t_uint256": {
+              "label": "uint256"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/utils/SafeMath.sol:SafeMath": {
+        "src": "contracts\\utils\\SafeMath.sol:4",
+        "version": {
+          "withMetadata": "ea95b0ef143cc2f9842139ad212a505e0510e01f202d2b9b4bb933a303a40937",
+          "withoutMetadata": "3549540529f7cd39c5550a74fcc5f70e5e6b37f04564fcff838b549749e11f64",
+          "linkedWithoutMetadata": "3549540529f7cd39c5550a74fcc5f70e5e6b37f04564fcff838b549749e11f64"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      }
+    },
+    {
+      "contracts/TRGStaking.sol:TRGStaking": {
+        "src": "contracts\\TRGStaking.sol:8",
+        "version": {
+          "withMetadata": "2cc54decc9cc5da54b774bd8d49634f4bf76a302eebbd4124d139137d6386e69",
+          "withoutMetadata": "cde6f4cce949f075e21dc6eb34d733f33d93d7bc40c61058b60ba7e4d598d3ac",
+          "linkedWithoutMetadata": "cde6f4cce949f075e21dc6eb34d733f33d93d7bc40c61058b60ba7e4d598d3ac"
+        },
+        "inherit": [
+          "contracts/utils/ReentrancyGuard.sol:ReentrancyGuard",
+          "contracts/utils/Ownable.sol:Ownable"
+        ],
+        "libraries": [],
+        "methods": [
+          "(address)",
+          "addReward(uint256)",
+          "stake(uint256)",
+          "unstake()",
+          "pendingReward(address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "TRGStaking",
+            "src": "contracts\\TRGStaking.sol:27"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "trgToken",
+            "src": "contracts\\TRGStaking.sol:9"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "TRGStaking",
+              "label": "stakes",
+              "type": "t_mapping(t_address,t_struct(StakeInfo)18_storage)",
+              "src": "contracts\\TRGStaking.sol:17"
+            },
+            {
+              "contract": "TRGStaking",
+              "label": "totalStaked",
+              "type": "t_uint256",
+              "src": "contracts\\TRGStaking.sol:18"
+            },
+            {
+              "contract": "TRGStaking",
+              "label": "rewardPool",
+              "type": "t_uint256",
+              "src": "contracts\\TRGStaking.sol:19"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_struct(StakeInfo)18_storage)": {
+              "label": "mapping(address => struct TRGStaking.StakeInfo)"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_struct(StakeInfo)18_storage": {
+              "label": "struct TRGStaking.StakeInfo",
+              "members": [
+                {
+                  "label": "amount",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "rewardDebt",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "lastStakeTime",
+                  "type": "t_uint256"
+                }
+              ]
+            },
+            "t_uint256": {
+              "label": "uint256"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/TRGToken.sol:IUniswapV2Router02": {
+        "src": "contracts\\TRGToken.sol:10",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "addLiquidityETH(address,uint256,uint256,uint256,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/TRGToken.sol:TrillionGame": {
+        "src": "contracts\\TRGToken.sol:21",
+        "version": {
+          "withMetadata": "1fc57725086b2b917fb400542424916715dad66dd594da5b0e832d51addfc5d3",
+          "withoutMetadata": "c22b79a3d3c190c68e4bd92a121a7334c9c1c18a6ffc0f4b9c34a55411c7dc2d",
+          "linkedWithoutMetadata": "c22b79a3d3c190c68e4bd92a121a7334c9c1c18a6ffc0f4b9c34a55411c7dc2d"
+        },
+        "inherit": [
+          "contracts/utils/ReentrancyGuard.sol:ReentrancyGuard",
+          "contracts/utils/Ownable.sol:Ownable",
+          "contracts/utils/ERC20Permit.sol:ERC20Permit",
+          "contracts/utils/ERC20.sol:ERC20",
+          "contracts/utils/IERC20.sol:IERC20"
+        ],
+        "libraries": [],
+        "methods": [
+          "(address,address)",
+          "setDevWallet(address)",
+          "setDevFee(uint256)",
+          "setMaxTxAmount(uint256)",
+          "excludeFromFees(address,bool)",
+          "enableTrading()",
+          "burn(uint256)",
+          "()",
+          "addInitialLiquidity(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "TrillionGame",
+            "src": "contracts\\TRGToken.sol:37"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "devFee",
+            "src": "contracts\\TRGToken.sol:25"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "maxTxAmount",
+            "src": "contracts\\TRGToken.sol:26"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "tradingEnabled",
+            "src": "contracts\\TRGToken.sol:28"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "routerAddress",
+            "src": "contracts\\TRGToken.sol:31"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "TrillionGame",
+              "label": "devFee",
+              "type": "t_uint256",
+              "src": "contracts\\TRGToken.sol:25"
+            },
+            {
+              "contract": "TrillionGame",
+              "label": "maxTxAmount",
+              "type": "t_uint256",
+              "src": "contracts\\TRGToken.sol:26"
+            },
+            {
+              "contract": "TrillionGame",
+              "label": "tradingEnabled",
+              "type": "t_bool",
+              "src": "contracts\\TRGToken.sol:28"
+            },
+            {
+              "contract": "TrillionGame",
+              "label": "devWallet",
+              "type": "t_address",
+              "src": "contracts\\TRGToken.sol:30"
+            },
+            {
+              "contract": "TrillionGame",
+              "label": "_isExcludedFromFees",
+              "type": "t_mapping(t_address,t_bool)",
+              "src": "contracts\\TRGToken.sol:32"
+            }
+          ],
+          "types": {
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_bool": {
+              "label": "bool"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/utils/ERC20.sol:ERC20": {
+        "src": "contracts\\utils\\ERC20.sol:6",
+        "version": {
+          "withMetadata": "f0310f256cd1ba50ab11d2bfb9f0263b815d19bbd082d07ae1dd12de271bb26f",
+          "withoutMetadata": "e04e45ff3cfcbd38c05dd583495b6f37c5d4bb186fdabdf22405e8cdfbf81e8f",
+          "linkedWithoutMetadata": "e04e45ff3cfcbd38c05dd583495b6f37c5d4bb186fdabdf22405e8cdfbf81e8f"
+        },
+        "inherit": [
+          "contracts/utils/IERC20.sol:IERC20"
+        ],
+        "libraries": [],
+        "methods": [
+          "(string,string)",
+          "totalSupply()",
+          "transfer(address,uint256)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "ERC20",
+            "src": "contracts\\utils\\ERC20.sol:15"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "ERC20",
+              "label": "name",
+              "type": "t_string_storage",
+              "src": "contracts\\utils\\ERC20.sol:7"
+            },
+            {
+              "contract": "ERC20",
+              "label": "symbol",
+              "type": "t_string_storage",
+              "src": "contracts\\utils\\ERC20.sol:8"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_totalSupply",
+              "type": "t_uint256",
+              "src": "contracts\\utils\\ERC20.sol:10"
+            },
+            {
+              "contract": "ERC20",
+              "label": "balanceOf",
+              "type": "t_mapping(t_address,t_uint256)",
+              "src": "contracts\\utils\\ERC20.sol:12"
+            },
+            {
+              "contract": "ERC20",
+              "label": "allowance",
+              "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+              "src": "contracts\\utils\\ERC20.sol:13"
+            }
+          ],
+          "types": {
+            "t_string_storage": {
+              "label": "string"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+              "label": "mapping(address => mapping(address => uint256))"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/utils/ERC20Permit.sol:ERC20Permit": {
+        "src": "contracts\\utils\\ERC20Permit.sol:4",
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/utils/IERC20.sol:IERC20": {
+        "src": "contracts\\utils\\IERC20.sol:4",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/utils/Ownable.sol:Ownable": {
+        "src": "contracts\\utils\\Ownable.sol:4",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "owner()",
+          "transferOwnership(address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Ownable",
+            "src": "contracts\\utils\\Ownable.sol:9"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "Ownable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "contracts\\utils\\Ownable.sol:5"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/utils/ReentrancyGuard.sol:ReentrancyGuard": {
+        "src": "contracts\\utils\\ReentrancyGuard.sol:4",
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "ReentrancyGuard",
+            "src": "contracts\\utils\\ReentrancyGuard.sol:10"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "ReentrancyGuard",
+              "label": "_status",
+              "type": "t_uint256",
+              "src": "contracts\\utils\\ReentrancyGuard.sol:8"
+            }
+          ],
+          "types": {
+            "t_uint256": {
+              "label": "uint256"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/utils/SafeMath.sol:SafeMath": {
+        "src": "contracts\\utils\\SafeMath.sol:4",
+        "version": {
+          "withMetadata": "ea95b0ef143cc2f9842139ad212a505e0510e01f202d2b9b4bb933a303a40937",
+          "withoutMetadata": "3549540529f7cd39c5550a74fcc5f70e5e6b37f04564fcff838b549749e11f64",
+          "linkedWithoutMetadata": "3549540529f7cd39c5550a74fcc5f70e5e6b37f04564fcff838b549749e11f64"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      }
+    },
+    {
+      "contracts/TRGStaking.sol:TRGStaking": {
+        "src": "contracts\\TRGStaking.sol:8",
+        "version": {
+          "withMetadata": "2cc54decc9cc5da54b774bd8d49634f4bf76a302eebbd4124d139137d6386e69",
+          "withoutMetadata": "cde6f4cce949f075e21dc6eb34d733f33d93d7bc40c61058b60ba7e4d598d3ac",
+          "linkedWithoutMetadata": "cde6f4cce949f075e21dc6eb34d733f33d93d7bc40c61058b60ba7e4d598d3ac"
+        },
+        "inherit": [
+          "contracts/utils/ReentrancyGuard.sol:ReentrancyGuard",
+          "contracts/utils/Ownable.sol:Ownable"
+        ],
+        "libraries": [],
+        "methods": [
+          "(address)",
+          "addReward(uint256)",
+          "stake(uint256)",
+          "unstake()",
+          "pendingReward(address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "TRGStaking",
+            "src": "contracts\\TRGStaking.sol:27"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "trgToken",
+            "src": "contracts\\TRGStaking.sol:9"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "TRGStaking",
+              "label": "stakes",
+              "type": "t_mapping(t_address,t_struct(StakeInfo)18_storage)",
+              "src": "contracts\\TRGStaking.sol:17"
+            },
+            {
+              "contract": "TRGStaking",
+              "label": "totalStaked",
+              "type": "t_uint256",
+              "src": "contracts\\TRGStaking.sol:18"
+            },
+            {
+              "contract": "TRGStaking",
+              "label": "rewardPool",
+              "type": "t_uint256",
+              "src": "contracts\\TRGStaking.sol:19"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_struct(StakeInfo)18_storage)": {
+              "label": "mapping(address => struct TRGStaking.StakeInfo)"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_struct(StakeInfo)18_storage": {
+              "label": "struct TRGStaking.StakeInfo",
+              "members": [
+                {
+                  "label": "amount",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "rewardDebt",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "lastStakeTime",
+                  "type": "t_uint256"
+                }
+              ]
+            },
+            "t_uint256": {
+              "label": "uint256"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/TRGToken.sol:IUniswapV2Router02": {
+        "src": "contracts\\TRGToken.sol:10",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "addLiquidityETH(address,uint256,uint256,uint256,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/TRGToken.sol:TrillionGame": {
+        "src": "contracts\\TRGToken.sol:21",
+        "version": {
+          "withMetadata": "1fc57725086b2b917fb400542424916715dad66dd594da5b0e832d51addfc5d3",
+          "withoutMetadata": "c22b79a3d3c190c68e4bd92a121a7334c9c1c18a6ffc0f4b9c34a55411c7dc2d",
+          "linkedWithoutMetadata": "c22b79a3d3c190c68e4bd92a121a7334c9c1c18a6ffc0f4b9c34a55411c7dc2d"
+        },
+        "inherit": [
+          "contracts/utils/ReentrancyGuard.sol:ReentrancyGuard",
+          "contracts/utils/Ownable.sol:Ownable",
+          "contracts/utils/ERC20Permit.sol:ERC20Permit",
+          "contracts/utils/ERC20.sol:ERC20",
+          "contracts/utils/IERC20.sol:IERC20"
+        ],
+        "libraries": [],
+        "methods": [
+          "(address,address)",
+          "setDevWallet(address)",
+          "setDevFee(uint256)",
+          "setMaxTxAmount(uint256)",
+          "excludeFromFees(address,bool)",
+          "enableTrading()",
+          "burn(uint256)",
+          "()",
+          "addInitialLiquidity(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "TrillionGame",
+            "src": "contracts\\TRGToken.sol:37"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "devFee",
+            "src": "contracts\\TRGToken.sol:25"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "maxTxAmount",
+            "src": "contracts\\TRGToken.sol:26"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "tradingEnabled",
+            "src": "contracts\\TRGToken.sol:28"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "routerAddress",
+            "src": "contracts\\TRGToken.sol:31"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "TrillionGame",
+              "label": "devFee",
+              "type": "t_uint256",
+              "src": "contracts\\TRGToken.sol:25"
+            },
+            {
+              "contract": "TrillionGame",
+              "label": "maxTxAmount",
+              "type": "t_uint256",
+              "src": "contracts\\TRGToken.sol:26"
+            },
+            {
+              "contract": "TrillionGame",
+              "label": "tradingEnabled",
+              "type": "t_bool",
+              "src": "contracts\\TRGToken.sol:28"
+            },
+            {
+              "contract": "TrillionGame",
+              "label": "devWallet",
+              "type": "t_address",
+              "src": "contracts\\TRGToken.sol:30"
+            },
+            {
+              "contract": "TrillionGame",
+              "label": "_isExcludedFromFees",
+              "type": "t_mapping(t_address,t_bool)",
+              "src": "contracts\\TRGToken.sol:32"
+            }
+          ],
+          "types": {
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_bool": {
+              "label": "bool"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/utils/ERC20.sol:ERC20": {
+        "src": "contracts\\utils\\ERC20.sol:6",
+        "version": {
+          "withMetadata": "f0310f256cd1ba50ab11d2bfb9f0263b815d19bbd082d07ae1dd12de271bb26f",
+          "withoutMetadata": "e04e45ff3cfcbd38c05dd583495b6f37c5d4bb186fdabdf22405e8cdfbf81e8f",
+          "linkedWithoutMetadata": "e04e45ff3cfcbd38c05dd583495b6f37c5d4bb186fdabdf22405e8cdfbf81e8f"
+        },
+        "inherit": [
+          "contracts/utils/IERC20.sol:IERC20"
+        ],
+        "libraries": [],
+        "methods": [
+          "(string,string)",
+          "totalSupply()",
+          "transfer(address,uint256)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "ERC20",
+            "src": "contracts\\utils\\ERC20.sol:15"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "ERC20",
+              "label": "name",
+              "type": "t_string_storage",
+              "src": "contracts\\utils\\ERC20.sol:7"
+            },
+            {
+              "contract": "ERC20",
+              "label": "symbol",
+              "type": "t_string_storage",
+              "src": "contracts\\utils\\ERC20.sol:8"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_totalSupply",
+              "type": "t_uint256",
+              "src": "contracts\\utils\\ERC20.sol:10"
+            },
+            {
+              "contract": "ERC20",
+              "label": "balanceOf",
+              "type": "t_mapping(t_address,t_uint256)",
+              "src": "contracts\\utils\\ERC20.sol:12"
+            },
+            {
+              "contract": "ERC20",
+              "label": "allowance",
+              "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+              "src": "contracts\\utils\\ERC20.sol:13"
+            }
+          ],
+          "types": {
+            "t_string_storage": {
+              "label": "string"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+              "label": "mapping(address => mapping(address => uint256))"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/utils/ERC20Permit.sol:ERC20Permit": {
+        "src": "contracts\\utils\\ERC20Permit.sol:4",
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/utils/IERC20.sol:IERC20": {
+        "src": "contracts\\utils\\IERC20.sol:4",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/utils/Ownable.sol:Ownable": {
+        "src": "contracts\\utils\\Ownable.sol:4",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "owner()",
+          "transferOwnership(address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Ownable",
+            "src": "contracts\\utils\\Ownable.sol:9"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "Ownable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "contracts\\utils\\Ownable.sol:5"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/utils/ReentrancyGuard.sol:ReentrancyGuard": {
+        "src": "contracts\\utils\\ReentrancyGuard.sol:4",
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "ReentrancyGuard",
+            "src": "contracts\\utils\\ReentrancyGuard.sol:10"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "ReentrancyGuard",
+              "label": "_status",
+              "type": "t_uint256",
+              "src": "contracts\\utils\\ReentrancyGuard.sol:8"
+            }
+          ],
+          "types": {
+            "t_uint256": {
+              "label": "uint256"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/utils/SafeMath.sol:SafeMath": {
+        "src": "contracts\\utils\\SafeMath.sol:4",
+        "version": {
+          "withMetadata": "ea95b0ef143cc2f9842139ad212a505e0510e01f202d2b9b4bb933a303a40937",
+          "withoutMetadata": "3549540529f7cd39c5550a74fcc5f70e5e6b37f04564fcff838b549749e11f64",
+          "linkedWithoutMetadata": "3549540529f7cd39c5550a74fcc5f70e5e6b37f04564fcff838b549749e11f64"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      }
+    }
+  ]
+}
