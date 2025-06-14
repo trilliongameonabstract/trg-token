@@ -1,1 +1,1 @@
-start: node buybot.js
+web: node buybot.js
