@@ -1,1 +1,1 @@
-worker: node buybot.js
+start: node buybot.js
